@@ -45,8 +45,9 @@ RegisteredEntity.prototype = {
     }
   },
   collideWith: function(other) {
-    this.entity.handlePotentialCollisionWith(other.entity)
-    other.entity.handlePotentialCollisionWith(this.entity)
+    // Can probably get rid of this now we're all 'physics'
+    this.entity.dispatch('potentialcollision', other.entity)
+    other.entity.dispatch('potentialcollision', this.entity)
   }
 }
 
