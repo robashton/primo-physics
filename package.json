@@ -18,6 +18,7 @@
   "author": "Rob Ashton",
   "license": "MIT",
   "dependencies": {
-    "underscore": "~1.4.3"
+    "underscore": "~1.4.3",
+    "primo-utils": ""
   }
 }
