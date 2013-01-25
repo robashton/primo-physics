@@ -1,0 +1,23 @@
+{
+  "name": "primo-spatialhash",
+  "version": "0.0.0",
+  "description": "Documentation forthcoming",
+  "main": "collisiongrid.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/robashton/primo-spatialhash.git"
+  },
+  "keywords": [
+    "primo",
+    "spatialhash",
+    "collision"
+  ],
+  "author": "Rob Ashton",
+  "license": "MIT",
+  "dependencies": {
+    "underscore": "~1.4.3"
+  }
+}
