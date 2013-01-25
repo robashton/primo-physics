@@ -1,5 +1,8 @@
 var _ = require('underscore')
 
+// Note: Entities are expected to have an 'id', 'x', 'y', 'width', 'height'
+// This is an in-direct coupling to the rest of primo, will sleep on it
+
 var Bucket = function(id) {
   this.id = id
   this.entities = []
