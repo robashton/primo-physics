@@ -27,7 +27,7 @@ RigidBody.TYPES =  {
 
 RigidBody.prototype = {
   touches: function(other) {
-    var otherBody = other.getComponentOfType(RigidBody)
+    var otherBody = other.physics
     var otherType = otherBody ? otherBody.type : RigidBody.TYPES.BOX
 
     if(this.type === RigidBody.TYPES.BOX && otherType === this.type) 
