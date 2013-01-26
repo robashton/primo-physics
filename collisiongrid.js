@@ -1,8 +1,8 @@
 var _ = require('underscore')
 var collision = require('./collision')
 
-// Note: Entities are expected to have an 'id', 'x', 'y', 'width', 'height'
-// This is an in-direct coupling to the rest of primo, will sleep on it
+// This is all hideous, creating lots of objects per frame, horrible dictionary usage
+// etc, will re-write it when I have time or it causes problems
 
 var Bucket = function(id) {
   this.id = id
@@ -25,6 +25,7 @@ Bucket.prototype = {
 var RegisteredEntity = function(entity) {
   this.id = entity.id
   this.entity = entity
+  this.history = {}
   this.buckets = []
 }
 
@@ -40,8 +41,10 @@ RegisteredEntity.prototype = {
         var entity = bucket.get(j)
         if(added[entity.id]) continue
         if(entity.id === this.id) continue
+        if(entity.history[this.id]) continue
         added[entity.id] = true
         array.push(entity)
+        this.history[entity.id] = true
       }
     }
   },
