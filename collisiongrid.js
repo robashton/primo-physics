@@ -1,4 +1,5 @@
 var _ = require('underscore')
+var collision = require('./collision')
 
 // Note: Entities are expected to have an 'id', 'x', 'y', 'width', 'height'
 // This is an in-direct coupling to the rest of primo, will sleep on it
@@ -45,9 +46,7 @@ RegisteredEntity.prototype = {
     }
   },
   collideWith: function(other) {
-    // Can probably get rid of this now we're all 'physics'
-    this.entity.dispatch('potentialcollision', other.entity)
-    other.entity.dispatch('potentialcollision', this.entity)
+    collision(this.entity, other.entity)
   }
 }
 
